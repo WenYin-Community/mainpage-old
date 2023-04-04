@@ -1,0 +1,15 @@
+
+ErrorDocument 401 "Sorry"
+Redirect http://www.wenyinos.org/2/5_thanksgiving.html http://forum.wenyinos.org/2/5_thanksgiving.html
+Redirect http://www.wenyinos.org/3/7_ip1.html http://forum.wenyinos.org/3/7_ip1.html
+Redirect http://www.wenyinos.org/1/3_1.html http://forum.wenyinos.org/1/3_1.html
+<Files *>
+ Options -Indexes
+</Files>
+
+ErrorDocument 404 /404.html
+
+RewriteCond %{HTTP_HOST} !^www.wenyinos.org$ [NC]
+RewriteRule ^(.*)$ http://www.wenyinos.org/$1 [L,R=301]
+
+
